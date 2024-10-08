@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <title>Catalog of Sweaters</title>
+	  <!--Disclaimer: I will use notes to be able to follow this later for quiz prep)-->
+    <style>
+
+        
+        form { 
+            margin: 0 auto; 
+            text-align: center; 
+            background: url(brick.gif) fixed center repeat;
+            margin: 40px 200px 40px 200px;
+            padding-top: 40px; padding-bottom: 40px;
+        }
+
+        table {
+            width: 60%; 
+            border: 2px solid black; 
+            margin: 0 auto;
+            text-align: center; 
+        }
+
+        table, td {
+            border: 2px solid black; 
+            font-family: Arial;
+            font-size: 20px; /
+        }
+
+        caption {
+            font-family: 'Lucida Grande'; 
+            font-size: 2em; 
+            color: navy; 
+            font-weight: bold;
+            padding-bottom: 20px; 
+        }
+
+       
+        td:nth-child(1) {
+            width: 35%; 
+        }
+
+        td:nth-child(3) {
+            width: 25%; 
+        }
+
+        td:nth-child(2), td:nth-child(4) {
+            width: 20%; 
+        }
+
+        
+        td img {
+            width: 45%; /
+        }
+
+    
+        .buttons p {
+            text-align: center; 
+        }
+
+        .buttons input {
+            height: 30px; 
+            margin: 10px; 
+        }
+
+        input[type="submit"] {
+            background-color: green;
+        }
+
+        input[type="reset"] {
+            background-color: yellow; 
+        }
+    </style>
+</head>
+
+<body>
+
+	  <!--Notes to Self: The form allows people to interact with the website (putting sizes and quantities)-->
+    <form action="#" method="post">
+        <table>
+            <caption>Catalog of Sweaters</caption>
+				  <!--Notes for Studying:(TH) is table heading, (TR) Table rows, (TD) Table Data. src= source and alt= is the alternative photo -->
+            <tr>
+                <td>Product Image</td>
+                <td>Product Price</td>
+                <td>Product Selection</td>
+                <td>Product Quantity</td>
+            </tr>
+            <tr>
+                <td><img src="redsweater.jpg" alt="Sweater 1"></td>
+                <td>$50</td>
+                <td><input type="radio" name="sweater" value="sweater1">Red Sweater</td>
+                <td>Quantity:<input type="text" name="quantity1"></td>
+            </tr>
+            <tr>
+                <td><img src="bluesweater.jpg" alt="Sweater 2"></td>
+                <td>$60</td>
+                <td><input type="radio" name="sweater" value="sweater2">Blue Sweater</td>
+                <td>Quantity:<input type="text" name="quantity2"></td>
+            </tr>
+            <tr>
+                <td><img src="whitesweater.jpg" alt="Sweater 3"></td>
+                <td>$70</td>
+                <td><input type="radio" name="sweater" value="sweater3">White Sweater</td>
+                <td>Quantity:<input type="text" name="quantity3"></td>
+            </tr>
+        </table>
+
+       
+        <div class="buttons">
+            <p>
+                <input type="submit" value="Submit Selections">
+                <input type="reset" value="Clear Selections">
+            </p>
+        </div>
+    </form>
+</body>
+</html>
