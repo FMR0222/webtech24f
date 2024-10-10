@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+	<meta charset="UTF-8">
+	<title>Quiz 2 Practices</title>
+
+	<style>
+		/* Your styles go here */
+		ol {
+			list-style-type: lower-roman;
+		}
+
+		ul {
+			list-style-type: square;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: blue; /* Change link color on hover */
+		}
+
+		/* Simple styles for the form */
+		form {
+			width: 60%;
+			background-color: lightgreen;
+			font-family: Arial, sans-serif;
+			margin: 0 auto; /* Center the form */
+			padding: 10px;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		label {
+			display: block;
+			margin: 10px 0;
+		}
+
+		input[type="text"],
+		textarea {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		input[type="submit"],
+		input[type="reset"] {
+			margin-right: 10px;
+		}
+	</style>
+  </head>
+
+  <body>
+	<!-- Practice Question 1 -->
+	<h1>Practice Question 1</h1>
+	<ol>
+		<li>Carbohydrates
+			<ul>
+				<li><a href="https://en.wikipedia.org/wiki/Pasta">Pasta</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Rice">Rice</a></li>
+			</ul>
+		</li>
+		<li>Fruits</li>
+		<li>Vegetables</li>
+	</ol>
+
+	<!-- End of Practice Question 1 -->
+
+	<!-- Practice Question 2 -->
+	<h2>Student Form</h2>
+	<form>
+		<label for="name">Your Name:</label>
+		<input type="text" id="name" name="name" />
+
+		<label for="level">Your College Level:</label>
+		<input type="radio" id="freshperson" name="level" value="Freshperson"> Freshperson
+		<input type="radio" id="sophomore" name="level" value="Sophomore"> Sophomore
+		<input type="radio" id="junior" name="level" value="Junior"> Junior
+		<input type="radio" id="senior" name="level" value="Senior"> Senior
+
+		<label for="major">Your Major (3 character code):</label>
+		<input type="text" id="major" name="major" maxlength="3" />
+
+		<label for="ambitions">Your Ambitions:</label>
+		<textarea id="ambitions" name="ambitions" rows="5"></textarea>
+
+		<input type="submit" value="Submit">
+		<input type="reset" value="Reset">
+	</form>
+	<!-- End of Practice Question 2 -->
+  </body>
+</html>
