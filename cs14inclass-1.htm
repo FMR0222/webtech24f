@@ -20,10 +20,13 @@
         <script type="text/javascript">
                
          function chgImg()
-          { var mying; mying=document.getElementById("a");
-            var=myinp;
+
+          { 
+            const myimg= document.getElementById("a")
+            
+            var mying; 
             myinp= prompt("Enter one of maple,shamrok, thyme, or clover");
-           if (myinp="maple")
+            myinp= myinp.toLocaleLowerCase();
            { myimg.src="maple.jpg";
            myimg.src="Maple Leaf";
            myimg.src= "Majestic Maple";
@@ -31,7 +34,25 @@
            }
 
           }
+         
+          else if(myinp=="clover")
+          { myimg.src="maple.jpg";
+           myimg.src="Maple Leaf";
+           myimg.src= "Majestic Maple";}
 
+
+
+          else if(myinp=="thyme")
+         {
+          myimg.src="thyme.jpg";
+           myimg.src="Thyme Leaf";
+           myimg.src= "Tiny thyme";
+         }
+
+         else
+         {alert("You entered the wrong input")}
+
+           
 
            
         </script>
