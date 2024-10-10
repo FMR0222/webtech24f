@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+	    <title>Change the title</title> 
+        <style type="text/css">
+         
+        
+        </style>
+
+        <style>
+            h1 {
+                font-family: Arial, sans-serif;
+                color: yellow;
+                background-image: url('insta.jpg');
+                background-repeat: no-repeat;
+                background-position: bottom;
+                text-align: center; 
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+
+            h2 {
+                font-family: Arial, sans-serif;
+                color: black; 
+            }
+
+            form {
+
+              background-color: silver;
+              color: navy;
+              font-family: Arial, sans-serif;
+              padding: 50px;
+              width: 50%;
+              margin: 0 auto; 
+              text-align: left; 
+            }
+
+            .label-orange {
+                color: orangered;
+            }
+
+            .bullet {
+                background-image: url('star.gif');
+                background-repeat: no-repeat;
+                padding-left: 20px;
+                margin-bottom: 10px;
+            }
+
+            .numbered {
+                counter-reset: section;
+                margin-left: 40px;
+            }
+
+            .numbered div::before {
+                counter-increment: section;
+                content: counter(section, lower-greek) ". ";
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>About Instagram</h1>
+
+        <form>
+            <label class="label-orange" for="name">Your Name:</label>
+            <input type="text" id="name" name="name" size="20"><br><br>
+
+            <label>Do you like Instagram?</label><br>
+            <input type="radio" id="yes" name="like_instagram" value="yes"> Yes<br>
+            <input type="radio" id="no" name="like_instagram" value="no"> No<br><br>
+
+            <label class="label-orange" for="access_times">How many times you access Instagram:</label>
+            <select id="access_times" name="access_times">
+                <option value="100">100</option>
+                <option value="50">50</option>
+                <option value="25">25</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit Data">
+            <input type="reset" value="Clear Data">
+        </form>
+
+        <h2>Courses offered in Babson</h2>
+
+       
+        <div class="bullet">Management Courses</div>
+        <div class="numbered">
+            <div>FME</div>
+            <div>SME</div>
+        </div>
+
+        <div class="bullet">Liberal Arts Courses</div>
+        <div class="numbered">
+            <div>FCI</div>
+            <div>Critical Race</div>
+        </div>
+    </body>
+</html>
