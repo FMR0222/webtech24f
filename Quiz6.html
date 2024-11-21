@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Animate Box</title>
+    <style>
+        h1 {
+            font-family: Arial;
+            font-size: large;
+            text-align: center;
+            color: Navy;
+        }
+        div {
+            height: 75px;
+            width: 75px;
+            background-color: red;
+            position: absolute;
+            top: 400px;
+            left: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        let topPos = 400;
+        let leftPos = 200;
+
+        function moveBox() {
+            const box = document.querySelector("div");
+
+            if (topPos > 100) {
+                topPos -= 5;
+            } else {
+                topPos = 400;
+                leftPos += 100;
+
+                if (leftPos > 800) {
+                    leftPos = 200;
+                }
+            }
+
+            box.style.top = topPos + "px";
+            box.style.left = leftPos + "px";
+
+            setTimeout(moveBox, 50);
+        }
+    </script>
+</head>
+<body onload="moveBox()">
+    <h1>Animate the Box</h1>
+    <div>Animate Me!!</div>
+</body>
+</html>
