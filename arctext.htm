@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        
+	    <title>Arc Text and Animated Typing</title>
+
+
+            <style>
+                h1#a {font-family: Arial; font-size: x-large;padding:20px; text-align:center;}
+                h2#b {font-family:lucida Handwriting; font: }
+
+
+        </style>
+         
+    
+         
+        <script type="text/java" src="https://code.jquery.com/jquery.min.js"></script>
+        <script type="text/java" src="jquery.arctext.js"> </script>
+        <script type="text/java" src="journey.animatetyping.js"> </script>
+
+        <script type="text/javascript">
+
+        $(function)() {
+
+            $("h1a").click (function)() {
+
+                $(this).arctext({radius:200,dir:1});
+                $("h2#b").arctext({radius:400,dir:-1})
+            }
+        }
+        
+
+
+        </script>
+ 
+
+<body>
+ 
+    <div>
+        <div class="animatetyping"
+
+        data-type-speed="200"
+        data-type-delay="200"
+        data-remove-speed="50"
+        data-remove-delay="500">
+        Thank you all for a great semester
+        
+        </div>
+        <script type="text/java" src="journey.animatetyping.js"> </script>
+        
+        
+        </div>
+   
+
+
+
+</body>
+</html>

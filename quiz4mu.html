@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>Quiz 4 Makeup</title>
+        <style type="text/css">
+            h1 {
+                text-align: center;
+            }
+            form {
+                font-family: Arial;
+                margin-left: auto; margin-right: auto;
+                padding-left: 100px; padding-top: 10px;
+            }
+            table {
+                width: 80%; border: 1px solid black; background-color: bisque; padding-top: 10px;
+            }
+            td.c1 {
+                width: 25%;
+            }
+            p {
+                width: 80%;
+                font-family: Arial;
+                color: Navy;
+                font-size: 16pt;
+                margin-left: 100px; 
+            }
+            td, select, .b {
+                font-size: 12pt;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> What is it worth? (25 points) </h1>
+        <p>This is a table within a form. There is a text box for entering the product. 
+            You can enter one of two values: lamp or shade. It may be entered in any 
+            mixed case. There is a drop-down for choosing a color. The user can choose a color. 
+            There is also a drop-down menu to select one of two fixed quantities. The user will enter 
+            the product, choose a color, select the quantity and click on compute. 
+            Ask the user for a price they are willing to pay. Make sure the price is a positive, 
+            non-zero value that is numerical. Please display the total (with $ sign) when the compute button 
+            is clicked. Ensure appropriate error messages are displayed for invalid inputs.
+        </p>
+        <form id="quizForm">
+            <table>
+                <tr>
+                    <td class="c1">
+                        Product: <input type="text" id="product" size="10" placeholder="Product" />
+                    </td>
+                    <td class="c1">
+                        Color: 
+                        <select id="color">
+                            <option value="null">Select Color</option>
+                            <option value="silver">Silver</option>
+                            <option value="beige">Beige</option>
+                        </select>
+                    </td>
+                    <td class="c1">
+                        Quantity: 
+                        <select id="quantity">
+                            <option value="null">Select Quantity</option>
+                            <option value="10">10 Units</option>
+                            <option value="20">20 Units</option>
+                        </select>
+                    </td>
+                    <td class="c1">
+                        Total: <input style="background-color:yellow" type="text" id="total" size="10" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button type="button" class="b" onclick="computeTotal()">Compute</button>
+                    <input class="b" type="reset" value="Clear" /></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function computeTotal() {
+                const product = document.getElementById("product").value.toLowerCase();
+                const color = document.getElementById("color").value;
+                const quantity = document.getElementById("quantity").value;
+                const totalField = document.getElementById("total");
+
+                if (product !== "lamp" && product !== "shade") {
+                    alert("Please enter a valid product: 'lamp' or 'shade'.");
+                    return;
+                }
+
+                if (color === "null") {
+                    alert("Please select a color.");
+                    return;
+                }
+
+                if (quantity === "null") {
+                    alert("Please select a quantity.");
+                    return;
+                }
+
+                const price = product === "lamp" ? 20 : 15;
+                const total = price * parseInt(quantity, 10);
+
+                totalField.value = `$${total}`;
+            }
+        </script>
+    </body>
+</html>
