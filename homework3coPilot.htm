@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+    <title>Homework 3 - CoPilot Enhanced</title>
+    <style>
+        form {background-color:silver; font-family:Arial; color:Navy; padding:20px; margin:auto; width:60%;}
+        .but {width:200px; height:60px; background-color:magenta; color:black;}
+        p#desc {margin:50px 200px; font-family:cursive;}
+        h3 {font-family:lucida handwriting; font-size:3em; text-align:center;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            const productInput = document.querySelector('input[name="product"]');
+            const quantityInput = document.querySelector('input[name="quantity"]');
+            const amountInput = document.querySelector('input[name="AmtDue"]');
+
+            const PRICES = {
+                milk: 3.50,
+                apple: 0.99,
+                fish: 5.99,
+            };
+
+            const validateInput = (product, quantity) => {
+                if (!product || !Object.keys(PRICES).includes(product.toLowerCase())) {
+                    throw new Error("Please enter a valid product: Milk, Apple, or Fish.");
+                }
+                if (isNaN(quantity) || quantity < 0) {
+                    throw new Error("Please enter a valid non-negative numeric quantity.");
+                }
+                return { product: product.toLowerCase(), quantity: parseFloat(quantity) };
+            };
+
+            const calculateTotal = (product, quantity) => {
+                return PRICES[product] * quantity;
+            };
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                try {
+                    const product = productInput.value.trim();
+                    const quantity = quantityInput.value.trim();
+                    const { product: validProduct, quantity: validQuantity } = validateInput(product, quantity);
+                    const total = calculateTotal(validProduct, validQuantity);
+                    amountInput.value = `$${total.toFixed(2)}`;
+                } catch (error) {
+                    alert(error.message);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3> Homework 3</h3>
+    <p id="desc">
+        The form given below has 3 fields. Enter the name of one of 3 products: Milk, Apple, or Fish. 
+        Check for correct input, and calculate the total amount based on predefined costs.
+    </p>
+    <form>
+        <p>
+            <input type="text" name="product" size="20" placeholder="Enter product..."/>
+            &nbsp; &nbsp;&nbsp;
+            <input type="text" name="quantity" size="20" placeholder="Enter quantity..."/>
+        </p>
+        <p>
+            <input type="text" name="AmtDue" size="20" placeholder="Show amount due" readonly/>
+        </p>
+        <p>
+            <input class="but" type="submit" value="What Do I Owe"/>
+            &nbsp; &nbsp;&nbsp;
+            <input class="but" type="reset" value="Clear All"/>  
+        </p>
+    </form>
+    <h2>Reflection</h2>
+    <p>
+       Both versions 1. validate user input for products and quantities 2.calculate the total amount owed based on predefined prices 3.display error messages in the form.
+        The Copilots version uses more advanced and modern JavaScript practices, such as centralized validation, reusable functions, and exception handling. 
+        This makes sure that the code in itself is cleaner code and easier to use for later use when adding products in the future. Compared to my version, 
+        it is better designed for scalability. Mine is fixed and will struggle if I add more variables.
+    </p>
+    <h2>Prompts Used</h2>
+    <ul>
+        <li>"How to calculate and validate form input in JavaScript dynamically?"</li>
+        <li>"How to handle exceptions for input validation?"</li>
+        <li>"How to structure JavaScript for reusable and scalable solutions?"</li>
+    </ul>
+</body>
+</html>
