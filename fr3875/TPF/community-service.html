@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore Fahad AlRasheed's community service efforts and social impact initiatives.">
+        <meta name="author" content="Fahad AlRasheed">
+        <title>Community Service - Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f9f9f9;
+                color: #333;
+            }
+
+            nav {
+                background-color: white;
+                color: black;
+                padding: 15px 20px;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            nav ul li {
+                position: relative;
+            }
+
+            nav ul li a {
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 10px 15px;
+                transition: color 0.3s;
+            }
+
+            nav ul li a:hover {
+                color: gray;
+            }
+
+            nav ul li ul {
+                display: none;
+                position: absolute;
+                background-color: white;
+                border: 1px solid #ddd;
+                padding: 10px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                top: 100%;
+                list-style: none;
+                z-index: 20;
+            }
+
+            nav ul li:hover ul {
+                display: block;
+            }
+
+            nav ul li ul li {
+                text-align: left;
+            }
+
+            nav ul li ul li a {
+                color: black;
+                padding: 10px 20px;
+                display: block;
+            }
+
+            nav ul li ul li a:hover {
+                background-color: #f0f0f0;
+            }
+
+            header {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+
+            header img {
+                width: 100%;
+                height: auto;
+                filter: brightness(70%);
+            }
+
+            header .header-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 3.5em;
+                margin: 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            header p {
+                font-size: 1.5em;
+                margin-top: 10px;
+            }
+
+            .content-section {
+                background-color: #ffffff;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                margin: 120px auto 20px;
+                max-width: 80%;
+                text-align: left;
+            }
+
+            .content-section h2 {
+                font-size: 1.8em;
+                font-weight: bold;
+                margin-bottom: 10px;
+                border-bottom: 2px solid #333;
+                padding-bottom: 5px;
+            }
+
+            .content-section p {
+                font-size: 1.2em;
+                line-height: 1.6;
+            }
+
+            #scrollToTopBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                font-size: 18px;
+                background: #333;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+            }
+
+            #scrollToTopBtn:hover {
+                background: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">About Me</a>
+                    <ul>
+                        <li><a href="professional-work.html">Professional Work</a></li>
+                        <li><a href="academic-work.html">Academic Work</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="travel.html">Travel</a></li>
+                        <li><a href="community-service.html">Community Service</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="credits.html">Credits</a></li>
+                <li><a href="sitemap.html">Site Map</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <img src="CS1.jpg" alt="Community Service Header">
+            <div class="header-text">
+                <h1>Community Service Journey</h1>
+                <p>Empowering communities through social impact</p>
+            </div>
+        </header>
+
+        <section class="content-section">
+            <h2>Inspired by Family Values</h2>
+            <p>Growing up, giving back was a natural part of life. My parents’ dedication to community work set the foundation for my own involvement. From volunteering in local charity events to supporting my mothers community programs, I learned the importance of making a positive impact early on.</p>
+
+            <h2>School and Community Projects</h2>
+            <p>As I got older, my passion for community service grew. I became more involved in school initiatives like refurbishing underfunded schools and organizing local charity events. These experiences helped me realize how small actions can lead to meaningful change.</p>
+
+            <h2>Babson's Emphasis on Social Impact</h2>
+            <p>Babson’s commitment to social entrepreneurship is a big reason I chose it. Being part of the Natalie Taylor Scholar Program has allowed me to continue my community service efforts while learning how to make a larger impact through entrepreneurship.</p>
+        </section>
+
+        <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#scrollToTopBtn').fadeIn();
+                } else {
+                    $('#scrollToTopBtn').fadeOut();
+                }
+            });
+
+            $('#scrollToTopBtn').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+        </script>
+    </body>
+</html>
