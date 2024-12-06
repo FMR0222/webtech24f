@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Fahad AlRasheed's impactful projects, including data analytics, financial assessments, and marketing campaigns.">
+  <meta name="keywords" content="Fahad AlRasheed, Projects, Data Analytics, Financial Assessment, Marketing Campaigns, Beats by Dre, Hildreth Institute, EPS Financials">
+  <meta name="author" content="Fahad AlRasheed">
+  <title>Projects - Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    nav {
+      background-color: white;
+      color: black;
+      padding: 15px 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 2px solid #ccc;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #555;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: white;
+      padding: 10px 0;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 5px 0;
+    }
+
+    nav ul li ul li a {
+      padding: 10px 20px;
+      display: block;
+      color: black;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+      height: 70vh;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center; 
+      filter: brightness(60%);
+    }
+
+    header .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: typewriter 4s steps(20, end) 1;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid white;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .projects-section {
+      margin: 60px auto;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    .project {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .project h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    .project p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .view-button {
+      display: inline-block;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-button:hover {
+      background-color: gray;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center center;  
+    }
+
+    
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="TPV2.html">Home</a></li>
+      <li>
+        <a href="#">About Me</a>
+        <ul>
+          <li><a href="professional-work.html">Professional Work</a></li>
+          <li><a href="academic-work.html">Academic Work</a></li>
+          <li><a href="community-service.html">Community Service</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="travel.html">Travel</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="ProjectShot.jpg" alt="Projects Header"> 
+    <div class="header-text">
+      <h1>Project Showcase</h1>
+      <p>Exploring impactful solutions with creativity and precision</p>
+    </div>
+  </header>
+
+  <section class="projects-section">
+    <div class="project">
+        <h2>Hildreth Institute Project</h2>
+        <p>Using predictive modeling to solve educational challenges.</p>
+        <a href="Hildreth.pdf" target="_blank" class="view-button">View Project</a>
+    </div>
+
+    <div class="project">
+        <h2>EPS Financial & Delisle Project</h2>
+        <p>Financial health assessments and innovative strategies.</p>
+        <a href="Financials EPS.pdf" target="_blank" class="view-button">View EPS Financials</a>
+        <a href="Delisle Financial Health Assessment.pdf" target="_blank" class="view-button">View Delisle Assessment</a>
+    </div>
+
+    <div class="project">
+        <h2>Fundraising Campaign</h2>
+        <p>Marketing analytics for Paralyzed Veterans of America.</p>
+        <a href="Marketing Analytics Assignment 4 Predictive Modeling - Group 3 (1).pdf" target="_blank" class="view-button">View Campaign</a>
+    </div>
+
+    <div class="project">
+        <h2>Beats by Dre Market Research</h2>
+        <p>Analyzing consumer preferences for optimal market strategies.</p>
+        <a href="Beats Final Presentations.pdf" target="_blank" class="view-button">View Project</a>
+    </div>
+</section>
+
+
+  <footer>
+    <p>© 2024 Fahad AlRasheed. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    const map = L.map('world-map').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+    }).addTo(map);
+
+    const locations = {
+      hawaii: [21.3069, -157.8583],
+      portugal: [38.7369, -9.139],
+      london: [51.5074, -0.1278],
+    };
+
+    Object.keys(locations).forEach(id => {
+      const marker = L.marker(locations[id]).addTo(map);
+      marker.on('click', () => {
+        document.querySelectorAll('.location').forEach(loc => loc.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

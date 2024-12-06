@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Travel Adventures - Exploring the World for Inspiration | Fahad AlRasheed">
+  <meta name="description" content="Explore Fahad AlRasheed's travels to nine incredible destinations, each offering unique life lessons and experiences that shaped his personal and professional journey.">
+  <meta name="keywords" content="Travel, Inspiration, Life Lessons, Cultural Exploration, Personal Growth, Adventure">
+  <meta name="author" content="Fahad AlRasheed">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <title>Travel | Fahad AlRasheed</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    nav {
+      background-color: white;
+      color: black;
+      padding: 15px 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: gray;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: white;
+      padding: 10px 0;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      top: 100%;
+      list-style: none;
+      z-index: 20;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      text-align: left;
+    }
+
+    nav ul li ul li a {
+      color: black;
+      padding: 10px 20px;
+      display: block;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header .header-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    #map-section {
+      padding: 50px;
+      text-align: center;
+    }
+
+    #map-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    #world-map {
+      width: 80%;
+      margin: 0 auto;
+      height: 500px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #locations {
+      padding: 50px;
+    }
+
+    .location {
+      display: none;
+      text-align: center;
+      margin: 50px 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      background: #fff;
+    }
+
+    .location h3 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .location blockquote {
+      font-size: 1.2em;
+      margin: 20px 0;
+      color: #555;
+      font-style: italic;
+    }
+
+    .location img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center center;  
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="TPV2.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">About Me</a>
+        <ul>
+          <li><a href="professional-work.html">Professional Work</a></li>
+          <li><a href="academic-work.html">Academic Work</a></li>
+          <li><a href="community-service.html">Community Service</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="travel.html">Travel</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <video autoplay muted loop id="header-video">
+      <source src="HeaderVideo.MOV" type="video/mp4">
+    </video>
+    <div class="header-content">
+      <h1>My Travel Journey</h1>
+      <p>Exploring the world, building character, and finding inspiration.</p>
+    </div>
+  </header>
+
+  <section id="map-section">
+    <h2>Explore the Map</h2>
+    <div id="world-map"></div>
+  </section>
+
+  <section id="locations">
+    <div id="hawaii" class="location">
+      <h3>Hawaii 🌺</h3>
+      <blockquote>“Traveling around Maui taught me that work should be meaningful because life is too short.”</blockquote>
+      <p>"Driving through Maui's winding roads and seeing the endless beauty of the island was a grounding experience. The locals' pure hearts and smiles were a reminder that life's simplest joys hold the most value."</p>
+      <img src="HawaiiCarRides.jpg" alt="Driving in Hawaii">
+    </div>
+    <div id="portugal" class="location">
+      <h3>Portugal 🇵🇹</h3>
+      <blockquote>“Work should be a means to live, not the other way around.”</blockquote>
+      <p>"Sitting by the water in Lisbon, surrounded by families enjoying long lunches, reshaped my priorities."</p>
+      <img src="Portugal.JPG" alt="Portugal Sunset">
+    </div>
+    <div id="london" class="location">
+      <h3>London 🇬🇧</h3>
+      <blockquote>“London inspired me with its unique blend of art and business.”</blockquote>
+      <p>"From Big Ben to Shoreditch, the mix of art and commerce proved creativity and business can harmoniously coexist."</p>
+      <img src="LondonTown.jpg" alt="London City">
+    </div>
+    <div id="seattle" class="location">
+      <h3>Seattle 🌲</h3>
+      <blockquote>“Seattle reminded me of the importance of education and family.”</blockquote>
+      <p>"Seeing my brother's journey for his Ph.D. inspired me to value learning and growth."</p>
+      <img src="Seattle.JPG" alt="Seattle Skyline">
+    </div>
+    <div id="vermont" class="location">
+      <h3>Vermont 🚗</h3>
+      <blockquote>“Taking risks can lead to unforgettable rewards.”</blockquote>
+      <p>"That solo drive to Vermont was about proving to myself that stepping out of my comfort zone can lead to unforgettable experiences."</p>
+      <img src="Vermont.jpg" alt="Vermont Landscape">
+    </div>
+    <div id="turkey" class="location">
+      <h3>Turkey 🇹🇷</h3>
+      <blockquote>“This trip was pivotal in my journey toward independence.”</blockquote>
+      <p>"Kayaking in Bodrum's crystal waters felt like a moment of pure freedom and a step toward independence."</p>
+      <img src="Turkey.JPG" alt="Kayaking in Turkey">
+    </div>
+    <div id="iceland" class="location">
+      <h3>Iceland ❄️</h3>
+      <blockquote>“Proved that bucket-list dreams can come true.”</blockquote>
+      <p>"Standing between Iceland's glaciers reminded me that with planning, even the wildest goals are achievable."</p>
+      <img src="Iceland.jpg" alt="Iceland Glaciers">
+    </div>
+    <div id="puertorico" class="location">
+      <h3>Puerto Rico 🌴</h3>
+      <blockquote>“Exploring Puerto Rico built my character and inspired me to connect with nature.”</blockquote>
+      <p>"Climbing cliffs in Puerto Rico was unforgettable and reminded me of the importance of stepping out of my comfort zone."</p>
+      <img src="PeurtoRiceActivityCliffClimbing.JPG" alt="Cliff Climbing in Puerto Rico">
+    </div>
+    <div id="canada" class="location">
+      <h3>Canada 🍁</h3>
+      <blockquote>“Adventures in Banff taught me resilience and strength.”</blockquote>
+      <p>"Riding a motorcycle through the Rockies was liberating, like conquering both the road and my fears."</p>
+      <img src="Canada.JPG" alt="Riding in Canada">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Fahad AlRasheed. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const map = L.map('world-map').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+    }).addTo(map);
+
+    const locations = {
+      hawaii: [21.3069, -157.8583],
+      portugal: [38.7369, -9.139],
+      london: [51.5074, -0.1278],
+      seattle: [47.6062, -122.3321],
+      vermont: [44.5588, -72.5778],
+      turkey: [37.0359, 27.4303],
+      iceland: [64.1355, -21.8954],
+      puertorico: [18.2208, -66.5901],
+      canada: [51.1784, -115.5708],
+    };
+
+    Object.keys(locations).forEach(id => {
+      const marker = L.marker(locations[id]).addTo(map);
+      marker.on('click', () => {
+        document.querySelectorAll('.location').forEach(loc => loc.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
